@@ -1,4 +1,4 @@
-# CS454 Project
+# SCALABLE INTERSECTIONAL BIAS AUDITING IN VISION-LANGUAGE MODELS THROUGH COMBINATORIAL INTERACTION TESTING
 ## Overview
 
 1. **Prompt Generation** (`prompt_generator/`): Generate n-wise CT prompt sets (2-wise, 3-wise, 4-wise)
