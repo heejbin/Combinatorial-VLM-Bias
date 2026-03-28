@@ -3,7 +3,7 @@
 
 1. **Prompt Generation** (`prompt_generator/`): Generate n-wise CT prompt sets (2-wise, 3-wise, 4-wise)
 2. **Image Generation** (`diffusion_runner/`): Generate images using diffusion models (SDXL, etc.)
-3. **Automated Evaluation** (`evaluator/`): VQA and CLIP-based attribute verification
+3. **Automated Evaluation** (`evaluator/`): VLM evaluation
 4. **Statistical Analysis** (`evaluator/`): Chi-square and KS tests for bias detection
 5. **Human Annotation** (`annotations/`): Web-based annotation UI with IAA calculation
 6. **Results & Visualization** (`results/`): Intersectional metrics and charts
@@ -61,7 +61,7 @@ Output: Images are saved to `./outputs/` as `{case_id}_{index}.jpg`.
 
 ### 4. VQA Evaluation
 
-Evaluate generated images using VQA models.
+Evaluate VQA models using generated images.
 
 ```bash
 python evaluator/run_vqa_evaluation.py -n 2
