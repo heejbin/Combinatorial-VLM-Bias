@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4시간 주석</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --ink: #1c2430;
+            --muted: #5c6775;
+            --line: #d8dee6;
+            --paper: #f4f6f8;
+            --card: #fff;
+            --accent: #1f6feb;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: "IBM Plex Sans", "Noto Sans KR", sans-serif;
+            color: var(--ink);
+            background: var(--paper);
+        }
+        header, main { max-width: 1100px; margin: 0 auto; padding: 20px; }
+        header {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            align-items: flex-end;
+        }
+        h1 { font-size: 22px; margin: 0 0 4px; }
+        .meta { color: var(--muted); font-size: 14px; }
+        .banner {
+            background: #fff6dd;
+            border: 1px solid #e6d39a;
+            padding: 10px 12px;
+            border-radius: 8px;
+            margin-top: 12px;
+        }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .names { display: flex; flex-wrap: wrap; gap: 12px; }
+        button {
+            font: inherit;
+            cursor: pointer;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            background: #fff;
+            padding: 10px 16px;
+        }
+        button.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+        button:disabled { opacity: 0.5; cursor: not-allowed; }
+        .layout {
+            display: grid;
+            grid-template-columns: minmax(280px, 460px) 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+        .layout > :first-child {
+            position: sticky;
+            top: 12px;
+        }
+        img.shot {
+            width: min(420px, 100%);
+            height: min(420px, calc(100vh - 48px));
+            object-fit: contain;
+            background: #111;
+            border-radius: 8px;
+        }
+        img.thumb, .pick img {
+            width: 160px;
+            height: 160px;
+            object-fit: contain;
+            background: #111;
+            border-radius: 8px;
+            display: block;
+        }
+        .gallery, .grid { display: flex; flex-wrap: wrap; gap: 12px; }
+        figure { margin: 0; width: 160px; }
+        figcaption { font-size: 13px; color: var(--muted); margin-top: 6px; }
+        textarea, input[type="text"] {
+            width: 100%;
+            font: inherit;
+            padding: 8px;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+        }
+        textarea { min-height: 72px; }
+        button.pick { padding: 0; overflow: hidden; text-align: left; }
+        .ok { color: #0b6b2a; }
+        .bad { color: #9d1c1c; }
+        .tags { color: var(--muted); font-size: 13px; }
+        .q { margin: 0 0 18px; }
+        .q h2 { font-size: 16px; margin: 0 0 8px; }
+        .q .block-label { color: var(--muted); font-size: 12px; letter-spacing: 0.04em; }
+        .opts { display: flex; flex-direction: column; gap: 6px; }
+        .opts label {
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+            padding: 8px 10px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+        }
+        .opts label:has(input:checked) { border-color: var(--accent); background: #f0f6ff; }
+        .actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 8px; }
+        .error { color: #9d1c1c; min-height: 1.2em; }
+        .save-state { color: var(--muted); font-size: 13px; margin-right: auto; align-self: center; }
+        .clock { font-variant-numeric: tabular-nums; color: var(--muted); }
+        ol { padding-left: 18px; }
+        li { margin: 6px 0; }
+        @media (max-width: 800px) {
+            .layout { grid-template-columns: 1fr; }
+            .layout > :first-child img.shot { height: 180px; }
+            header { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div>
+        <h1>그림 주석</h1>
+        <div class="meta" id="meta">이름을 고르면 이어서 할 수 있습니다.</div>
+    </div>
+    <div>
+        <button id="saveBtn" hidden type="button">저장</button>
+        <button id="exportBtn" hidden type="button">내보내기</button>
+        <button id="leadBtn" hidden type="button">예시 준비</button>
+        <span class="meta" id="fileState"></span>
+        <div class="clock" id="clock"></div>
+    </div>
+</header>
+<main id="app"></main>
+<script>
+const app = document.getElementById("app");
+const meta = document.getElementById("meta");
+const clock = document.getElementById("clock");
+let annotator = null;
+let studioToken = 0;
+let studio = {
+    boundary: "teen_young",
+    page: 0,
+    prompt_id: null,
+    sample: null,
+    kind: "reference",
+    axis: "age",
+    caption: "",
+    reason: "",
+    decoys: [],
+    answers: {},
+    id: null,
+};
+let shownKey = null;
+let shownAt = 0;
+let baseElapsed = 0;
+let tick = null;
+let saveTimer = null;
+let currentQuestions = [];
+
+function esc(text) {
+    return String(text).replace(/[&<>"']/g, (ch) => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+    }[ch]));
+}
+
+async function api(path, body) {
+    const url = body ? path : path + (path.includes("?") ? "&" : "?") + "annotator=" + encodeURIComponent(annotator || "");
+    const res = await fetch(url, {
+        method: body ? "POST" : "GET",
+        headers: {"Content-Type": "application/json"},
+        body: body ? JSON.stringify(Object.assign({annotator}, body)) : undefined,
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(data.error || res.statusText);
+    return data;
+}
+
+function currentElapsed() {
+    return Math.round(baseElapsed + (performance.now() - shownAt));
+}
+
+function startClock(alreadyMs) {
+    baseElapsed = alreadyMs || 0;
+    shownAt = performance.now();
+    if (tick) cancelAnimationFrame(tick);
+    const frame = () => {
+        const sec = Math.round(currentElapsed() / 1000);
+        clock.textContent = shownKey ? `이 그림 ${sec}초` : "";
+        tick = requestAnimationFrame(frame);
+    };
+    frame();
+}
+
+function draftStore() {
+    try {
+        return JSON.parse(localStorage.getItem("protocol4h-drafts") || "{}");
+    } catch (err) {
+        return {};
+    }
+}
+
+function rememberLocal(itemKey, answers, elapsed, memo) {
+    const all = draftStore();
+    if (!all[annotator]) all[annotator] = {};
+    all[annotator][itemKey] = {answers, elapsed_ms: elapsed, memo: memo || "", t: Date.now()};
+    localStorage.setItem("protocol4h-drafts", JSON.stringify(all));
+}
+
+function collectMemo() {
+    const box = document.querySelector("textarea[name=memo]");
+    return box ? box.value.slice(0, 500) : "";
+}
+
+function labelCatalog(labels) {
+    if (!labels || !labels.length) return "";
+    const rows = labels.map((row) => {
+        if (row.glosses && row.glosses.length) {
+            const items = row.glosses.map((item) =>
+                `<li><strong>${esc(item.label)}</strong>: ${esc(item.meaning)}</li>`
+            ).join("");
+            return `<li><strong>${esc(row.axis)}</strong><ul>${items}</ul></li>`;
+        }
+        return `<li><strong>${esc(row.axis)}</strong>: ${row.labels.map(esc).join(", ")}${row.note ? ` <span class="meta">(${esc(row.note)})</span>` : ""}</li>`;
+    }).join("");
+    return `<section class="card"><h2>LABEL</h2><ul>${rows}</ul></section>`;
+}
+
+function leadJobs() {
+    return `<section class="card">
+        <h2>희진이 할 일</h2>
+        <ol>
+            <li>기준 예시를 그림과 맞춰 본다. age, body, location의 LABEL마다 그림이 있다. 설명이 틀린 것만 고치고 저장한다.</li>
+            <li>연습 20장도 연다. 정답과 한 줄 이유가 틀리면 고친다. 애매하면 정답을 cannot judge로 둔다. 이 점검이 파일럿이다.</li>
+            <li>세 명에게 이 주소만 보낸다. 하루 정도 가이드라인에 대한 질문을 받는다. 본 그림의 답은 서로 말하지 않는다.</li>
+            <li>질문을 고친 뒤 예시 동결을 누른다. 그 다음부터는 기준을 바꾸지 않는다.</li>
+            <li>주석으로 돌아가 희진도 가이드라인, 연습 20장, Batch 1을 한다. Batch 1에 걸린 시간만 공유 시트에 적는다.</li>
+            <li>자기 라벨링이 끝나기 전에는 다른 사람 결과를 열지 않는다.</li>
+            <li>네 명의 Batch 1 시간이 모이면 정한다. 모두 60분 이하면 Batch 3 진행, 한 명이라도 넘으면 200장으로 고정.</li>
+        </ol>
+    </section>`;
+}
+
+function exampleCards(rows) {
+    if (!rows || !rows.length) {
+        return `<p class="meta">기준 예시가 아직 없습니다. 희진이 올리면 여기에 보입니다.</p>`;
+    }
+    const groups = new Map();
+    for (const row of rows) {
+        if (!groups.has(row.axis_label)) groups.set(row.axis_label, []);
+        groups.get(row.axis_label).push(row);
+    }
+    return Array.from(groups.entries()).map(([label, items]) => `
+        <h3>${esc(label)}</h3>
+        <div class="gallery">${items.map((item) => `
+            <figure>
+                <img class="thumb" alt="" src="${esc(item.image_url)}">
+                <figcaption>${esc(item.boundary_label)} · ${esc(item.caption)}</figcaption>
+            </figure>`).join("")}
+        </div>`).join("");
+}
+
+function localDraft(itemKey) {
+    return ((draftStore()[annotator] || {})[itemKey]) || null;
+}
+
+function collectPartial() {
+    const answers = {};
+    for (const q of currentQuestions) {
+        const picked = document.querySelector(`input[name="${CSS.escape(q.id)}"]:checked`);
+        if (picked) answers[q.id] = picked.value;
+    }
+    return answers;
+}
+
+function setSaveState(text) {
+    const el = document.getElementById("saveState");
+    if (el) el.textContent = text;
+}
+
+async function saveDraft() {
+    if (!annotator || !shownKey || !currentQuestions.length) return;
+    const answers = collectPartial();
+    if (!Object.keys(answers).length) return;
+    const elapsed = currentElapsed();
+    const memo = collectMemo();
+    rememberLocal(shownKey, answers, elapsed, memo);
+    setSaveState("저장 중");
+    try {
+        await api("/api/autosave", {item_key: shownKey, answers, draft_elapsed_ms: elapsed, memo});
+        setSaveState("저장됨");
+    } catch (err) {
+        setSaveState("이 브라우저에 보관 중");
+    }
+}
+
+function beaconSave() {
+    if (!annotator || !shownKey || !currentQuestions.length) return;
+    const answers = collectPartial();
+    if (!Object.keys(answers).length) return;
+    const elapsed = currentElapsed();
+    const memo = collectMemo();
+    rememberLocal(shownKey, answers, elapsed, memo);
+    const body = JSON.stringify({
+        annotator, item_key: shownKey, answers, draft_elapsed_ms: elapsed, memo,
+    });
+    if (navigator.sendBeacon) {
+        navigator.sendBeacon("/api/autosave", new Blob([body], {type: "application/json"}));
+    }
+}
+window.addEventListener("pagehide", beaconSave);
+
+function render(data) {
+    mode = "task";
+    const lock = data.lock_reason ? `<div class="banner">${esc(data.lock_reason)}</div>` : "";
+    if (!annotator) return;
+    if (data.phase === "guidelines") {
+        shownKey = null;
+        currentQuestions = [];
+        clock.textContent = "";
+        meta.textContent = `${annotator} · 가이드라인`;
+        const practiceLine = data.n_practice
+            ? `<p>이어서 연습 ${data.n_practice}장을 풉니다. 한 장을 제출하면 희진이 적어 둔 정답과 이유가 바로 보입니다. race_ethnicity는 정답을 맞히지 않고, 확신이 없으면 cannot judge를 골랐는지만 확인합니다.</p>`
+            : "";
+        app.innerHTML = `${labelCatalog(data.labels)}${data.is_lead ? leadJobs() : ""}<section class="card">
+            <h2>가이드라인</h2>
+            <ol>
+                <li>프롬프트는 보여 주지 않습니다. 그림만 보고 답합니다. LABEL은 영어 그대로입니다.</li>
+                <li>Adult는 young adult(만 20–39세)로 고릅니다. Teenager는 만 10–19세, Middle-aged는 만 40–59세입니다.</li>
+                <li>who uses a wheelchair가 안 보이면 not who uses a wheelchair입니다. Fat도 Thin도 아니면 neither입니다.</li>
+                <li>확인 문장 중 일부는 그림과 다르게 적혀 있습니다. 문장이 그림과 맞을 때만 aligned를 고릅니다.</li>
+                <li>확신이 없으면 cannot judge를 고릅니다. race_ethnicity는 특히 그렇습니다.</li>
+                <li>faith와 socioeconomic_status는 복식, 상징, 옷, 장소처럼 그림에 보이는 단서가 있을 때만 aligned입니다.</li>
+                <li>본 표본이 끝날 때까지 서로 답을 묻지 않습니다. 애매하면 cannot judge와 메모로 남깁니다.</li>
+                <li>답을 고를 때마다 저장됩니다. 창을 닫아도 이름을 다시 고르면 그 그림으로 돌아옵니다.</li>
+            </ol>
+            ${data.lead_note ? `<div class="banner">${esc(data.lead_note)}</div>` : ""}
+            <h2>기준 예시</h2>
+            <p class="meta">나이, 체형, 장소만 예시로 둡니다. race_ethnicity, faith, socioeconomic_status의 전형 모음은 만들지 않습니다.</p>
+            ${exampleCards(data.reference_examples)}
+            ${practiceLine}
+            ${lock}
+            <div class="actions">
+                ${data.is_lead ? `<button type="button" id="prep">예시 준비</button>` : ""}
+                <button class="primary" id="ack">읽었습니다</button>
+            </div>
+        </section>`;
+        const prep = document.getElementById("prep");
+        if (prep) prep.onclick = () => openStudio();
+        document.getElementById("ack").onclick = async () => render(await api("/api/guidelines", {}));
+        return;
+    }
+    if (data.phase === "practice_feedback") {
+        shownKey = null;
+        currentQuestions = [];
+        clock.textContent = "";
+        meta.textContent = `${annotator} · 연습 ${data.position} / ${data.length} 피드백`;
+        const rows = (data.feedback.rows || []).map((row) => {
+            if (row.rule_only) {
+                const followed = row.followed_rule ? `<p class="ok">cannot judge를 골랐습니다.</p>` : "";
+                return `<div class="q"><h2>${esc(row.text)}</h2><p>내 답: ${esc(row.yours)}</p><p>${esc(row.rule)}</p>${followed}</div>`;
+            }
+            const mark = row.ok ? `<span class="ok">같음</span>` : `<span class="bad">다름</span>`;
+            const rule = row.rule ? `<p>${esc(row.rule)}</p>` : "";
+            return `<div class="q"><h2>${esc(row.text)}</h2><p>내 답: ${esc(row.yours)}</p><p>기준: ${esc(row.key)} ${mark}</p>${rule}</div>`;
+        }).join("");
+        app.innerHTML = `<section class="layout">
+            <div class="card"><img class="shot" alt="" src="${esc(data.item.image_url)}"></div>
+            <section class="card">
+                <h2>이 그림의 기준</h2>
+                <p>${esc(data.feedback.reason || "")}</p>
+                ${rows}
+                <div class="actions">
+                    <button type="button" id="back">답 고치기</button>
+                    <button class="primary" type="button" id="next">다음</button>
+                </div>
+            </section>
+        </section>`;
+        document.getElementById("back").onclick = async () => render(await api("/api/back", {}));
+        document.getElementById("next").onclick = async () => render(await api("/api/practice/next", {}));
+        return;
+    }
+    if (data.phase === "break") {
+        shownKey = null;
+        currentQuestions = [];
+        clock.textContent = "";
+        meta.textContent = `${annotator} · batch ${data.after_batch} 끝`;
+        app.innerHTML = `<section class="card">
+            <h2>10분 휴식</h2>
+            <p>batch ${data.after_batch}을 마쳤습니다. 다음 batch는 ${data.next_batch} / ${data.n_batches}입니다.</p>
+            ${lock}
+            <div class="actions">
+                <button id="back">마지막 그림으로</button>
+                <button class="primary" id="next">휴식 후 다음 batch</button>
+            </div>
+        </section>`;
+        document.getElementById("back").onclick = async () => render(await api("/api/back", {}));
+        document.getElementById("next").onclick = async () => render(await api("/api/continue", {}));
+        return;
+    }
+    if (data.phase === "done") {
+        shownKey = null;
+        currentQuestions = [];
+        clock.textContent = "";
+        meta.textContent = `${annotator} · 완료`;
+        const planned = data.n_batches === 2 ? "200장" : "300장";
+        app.innerHTML = `<section class="card">
+            <h2>여기까지입니다</h2>
+            <p>${esc(annotator)} 님의 ${planned} 일정이 끝났습니다. 창을 닫아도 답은 저장되어 있습니다.</p>
+            ${lock}
+            <div class="actions"><button id="back">마지막 그림 고치기</button></div>
+        </section>`;
+        document.getElementById("back").onclick = async () => render(await api("/api/back", {}));
+        return;
+    }
+    const item = data.item;
+    currentQuestions = item.questions;
+    if (shownKey !== item.item_key) {
+        shownKey = item.item_key;
+        const local = localDraft(item.item_key);
+        const localMs = local ? (local.elapsed_ms || 0) : 0;
+        startClock(Math.max(item.draft_elapsed_ms || 0, localMs));
+    }
+    const phaseLabel = data.phase === "practice"
+        ? `연습 ${data.position} / ${data.length}`
+        : data.phase === "calibration"
+        ? `calibration ${data.position} / ${data.length}`
+        : `batch ${item.batch} · ${data.position} / ${data.length}`;
+    meta.textContent = `${annotator} · ${phaseLabel} · ${data.n_batches} batch`;
+    const saved = item.saved || {};
+    const blocks = [];
+    let lastBlock = null;
+    for (const q of item.questions) {
+        if (q.block !== lastBlock) {
+            blocks.push(`<p class="block-label">${q.block === "B" ? "추가 확인" : "기본"}</p>`);
+            lastBlock = q.block;
+        }
+        const opts = q.options.map((opt) => {
+            const checked = saved[q.id] === opt.id ? "checked" : "";
+            return `<label><input type="radio" name="${esc(q.id)}" value="${esc(opt.id)}" ${checked}> ${esc(opt.label)}</label>`;
+        }).join("");
+        blocks.push(`<fieldset class="q"><h2>${esc(q.text)}</h2><div class="opts">${opts}</div></fieldset>`);
+    }
+    app.innerHTML = `<section class="layout">
+        <div class="card"><img class="shot" alt="" src="${esc(item.image_url)}"></div>
+        <form class="card" id="form">
+            ${lock}
+            ${blocks.join("")}
+            <label class="q"><h2>메모 (선택)</h2>
+                <textarea name="memo" maxlength="500" placeholder="애매하면 cannot judge를 고르고 이유를 적습니다. 라벨링 중에는 다른 사람에게 묻지 않습니다.">${esc(item.saved_memo || "")}</textarea>
+            </label>
+            <p class="error" id="err"></p>
+            <div class="actions">
+                <span class="save-state" id="saveState">답을 고르면 바로 저장됩니다</span>
+                <button type="button" id="examples">기준 예시</button>
+                <button type="button" id="back">이전</button>
+                <button class="primary" type="submit" id="next">다음</button>
+            </div>
+        </form>
+    </section>`;
+    const local = localDraft(item.item_key);
+    const serverTime = item.saved_at ? Date.parse(item.saved_at) : 0;
+    if (local && local.t > serverTime) {
+        for (const [qid, value] of Object.entries(local.answers || {})) {
+            const input = document.querySelector(
+                `input[name="${CSS.escape(qid)}"][value="${CSS.escape(value)}"]`
+            );
+            if (input) input.checked = true;
+        }
+        const box = document.querySelector("textarea[name=memo]");
+        if (box && local.memo) box.value = local.memo;
+        saveDraft();
+    }
+    document.getElementById("form").addEventListener("change", () => {
+        clearTimeout(saveTimer);
+        setSaveState("저장 중");
+        saveTimer = setTimeout(saveDraft, 200);
+    });
+    document.getElementById("examples").onclick = async () => {
+        clearTimeout(saveTimer);
+        await saveDraft();
+        showExamples();
+    };
+    document.getElementById("back").onclick = async () => {
+        clearTimeout(saveTimer);
+        await saveDraft();
+        render(await api("/api/back", {}));
+    };
+    document.getElementById("form").onsubmit = async (event) => {
+        event.preventDefault();
+        clearTimeout(saveTimer);
+        const answers = {};
+        for (const q of item.questions) {
+            const picked = document.querySelector(`input[name="${CSS.escape(q.id)}"]:checked`);
+            if (!picked) {
+                document.getElementById("err").textContent = "모든 문항에 답한 뒤 다음으로 가세요.";
+                return;
+            }
+            answers[q.id] = picked.value;
+        }
+        const elapsed_ms = currentElapsed();
+        const memo = collectMemo();
+        rememberLocal(item.item_key, answers, elapsed_ms, memo);
+        try {
+            render(await api("/api/answer", {
+                item_key: item.item_key, answers, elapsed_ms, draft_elapsed_ms: elapsed_ms, memo,
+            }));
+        } catch (err) {
+            document.getElementById("err").textContent = err.message;
+        }
+    };
+}
+
+const DECOY_OF = {
+    location: "location",
+    faith: "faith",
+    ses: "socioeconomic_status",
+    disability_excluded: "disability_status",
+    appearance_excluded: "appearance_body_status",
+};
+
+async function showExamples() {
+    const data = await api("/api/examples");
+    shownKey = null;
+    currentQuestions = [];
+    clock.textContent = "";
+    meta.textContent = `${annotator} · 기준 예시`;
+    app.innerHTML = `<section class="card">
+        <h2>기준 예시</h2>
+        ${data.note ? `<div class="banner">${esc(data.note)}</div>` : ""}
+        ${exampleCards(data.reference)}
+        <div class="actions"><button class="primary" id="backTask" type="button">주석으로</button></div>
+    </section>`;
+    document.getElementById("backTask").onclick = async () => render(await api("/api/task"));
+}
+
+async function openStudio() {
+    if (annotator !== "희진") return;
+    mode = "studio";
+    shownKey = null;
+    currentQuestions = [];
+    clock.textContent = "";
+    meta.textContent = "희진 · 예시 준비";
+    await renderStudio();
+}
+
+async function renderStudio() {
+    const token = ++studioToken;
+    const data = await api("/api/lead/studio");
+    const page = await api(`/api/lead/candidates?boundary=${encodeURIComponent(studio.boundary)}&page=${studio.page}`);
+    if (mode !== "studio" || token !== studioToken) return;
+    studio.page = page.page;
+    let preview = null;
+    let previewError = "";
+    if (studio.prompt_id !== null) {
+        const decoy = studio.decoys.join(",");
+        try {
+            preview = await api(
+                `/api/lead/preview?prompt_id=${studio.prompt_id}&sample=${studio.sample}&decoy=${encodeURIComponent(decoy)}`
+            );
+        } catch (err) {
+            previewError = err.message;
+        }
+    }
+    if (mode !== "studio" || token !== studioToken) return;
+    const filters = data.boundaries.map((item) => {
+        const on = item.id === studio.boundary ? "primary" : "";
+        return `<button type="button" class="${on}" data-boundary="${esc(item.id)}">${esc(item.label)}</button>`;
+    }).join("");
+    const grid = page.items.map((item) => `
+        <button type="button" class="pick" data-prompt="${item.prompt_id}" data-sample="${item.sample}">
+            <img alt="" src="${esc(item.image_url)}">
+            <span class="tags">${esc(item.age)} · ${esc(item.body)} · ${esc(item.location)}</span>
+        </button>`).join("");
+    const savedRef = data.reference.map((row) => `
+        <figure>
+            <button type="button" class="pick" data-edit-ref="${esc(row.id)}"><img alt="" src="${esc(row.image_url)}"></button>
+            <figcaption>${esc(row.axis_label)} · ${esc(row.caption)}</figcaption>
+            <button type="button" data-swap="${esc(row.id)}">다른 그림</button>
+            <button type="button" data-delete="reference" data-id="${esc(row.id)}">빼기</button>
+        </figure>`).join("");
+    const savedPractice = data.practice.map((row) => `
+        <figure>
+            <button type="button" class="pick" data-edit-practice="${esc(row.id)}"><img alt="" src="${esc(row.image_url)}"></button>
+            <figcaption>연습 ${row.order} · ${esc(row.boundary_label)}</figcaption>
+            <button type="button" data-delete="practice" data-id="${esc(row.id)}">빼기</button>
+        </figure>`).join("");
+    let detail = `<p class="meta">위 목록이 나눠 둔 결과입니다. 문장을 고치려면 그 그림을 누르세요.</p>`;
+    if (previewError) detail = `<p class="error">${esc(previewError)}</p>`;
+    if (preview) {
+        const axisOpts = data.axes.map((axis) =>
+            `<option value="${esc(axis.id)}" ${studio.axis === axis.id ? "selected" : ""}>${esc(axis.label)}</option>`
+        ).join("");
+        const decoyBoxes = preview.questions.filter((q) => DECOY_OF[q.id]).map((q) => {
+            const axis = DECOY_OF[q.id];
+            const checked = studio.decoys.includes(axis) ? "checked" : "";
+            return `<label><input type="checkbox" data-decoy="${esc(axis)}" ${checked}> 이 질문을 decoy로</label>`;
+        }).join("");
+        const keyFields = studio.kind === "practice" ? preview.questions.map((q) => {
+            if (q.id === "race") {
+                return `<fieldset class="q"><h2>${esc(q.text)}</h2><p>race_ethnicity는 정답을 지정하지 않습니다. 확신이 없으면 cannot judge.</p></fieldset>`;
+            }
+            const opts = q.options.map((opt) => {
+                const checked = studio.answers[q.id] === opt.id ? "checked" : "";
+                return `<label><input type="radio" name="key-${esc(q.id)}" value="${esc(opt.id)}" ${checked}> ${esc(opt.label)}</label>`;
+            }).join("");
+            return `<fieldset class="q"><h2>${esc(q.text)}</h2><div class="opts">${opts}</div></fieldset>`;
+        }).join("") : "";
+        detail = `<img class="shot" alt="" src="${esc(preview.image_url)}">
+            <p class="tags">${esc(preview.tags.age)} · ${esc(preview.tags.gender)} · ${esc(preview.tags.body)} · ${esc(preview.tags.location)}</p>
+            <div class="names">
+                <button type="button" id="kindRef" class="${studio.kind === "reference" ? "primary" : ""}">기준 예시</button>
+                <button type="button" id="kindPractice" class="${studio.kind === "practice" ? "primary" : ""}">연습 문제</button>
+            </div>
+            ${studio.kind === "reference" ? `
+                <label class="q"><h2>축</h2><select id="axis">${axisOpts}</select></label>
+                <label class="q"><h2>한 줄 설명</h2><textarea id="caption">${esc(studio.caption)}</textarea></label>
+            ` : `
+                <p class="meta">${decoyBoxes}</p>
+                ${keyFields}
+                <label class="q"><h2>한 줄 이유</h2><textarea id="reason">${esc(studio.reason)}</textarea></label>
+            `}
+            <p class="error" id="studioErr"></p>
+            <div class="actions"><button class="primary" type="button" id="saveExample">저장</button></div>`;
+    }
+    app.innerHTML = `${labelCatalog(data.labels)}${leadJobs()}<section class="card">
+        <h2>예시 준비</h2>
+        <p class="meta">문장은 그림을 눌러 고칩니다. 그림만 바꾸려면 그 예시의 다른 그림을 누르세요. 문장은 그대로입니다.</p>
+        ${data.frozen ? `<div class="banner">동결되어 있습니다. 고치려면 동결을 푸세요.</div>` : ""}
+        <label class="q"><h2>모두에게 보이는 덧붙인 설명</h2>
+            <textarea id="note">${esc(data.note || "")}</textarea>
+        </label>
+        <div class="actions">
+            <button type="button" id="saveNote">설명 저장</button>
+            <button type="button" id="freeze">${data.frozen ? "동결 풀기" : "예시 동결"}</button>
+            <button type="button" id="batch2">200장으로 고정</button>
+            <button type="button" id="batch3">Batch 3 진행</button>
+            <button type="button" id="backTask">주석으로</button>
+        </div>
+        <p class="meta" id="studioStatus">${data.n_batches} batch${data.lock_reason ? " · " + esc(data.lock_reason) : ""}</p>
+    </section>
+    <section class="card">
+        <h2>올린 기준 예시 ${data.reference.length}</h2>
+        <div class="gallery">${savedRef || `<p class="meta">아직 없습니다.</p>`}</div>
+        <h2>올린 연습 ${data.practice.length} / 20</h2>
+        <div class="gallery">${savedPractice || `<p class="meta">아직 없습니다.</p>`}</div>
+    </section>
+    <section class="card">
+        <h2>그림 고르기</h2>
+        <div class="names">${filters}</div>
+        <div class="grid">${grid}</div>
+        <div class="actions">
+            <button type="button" id="prevPage" ${page.page <= 0 ? "disabled" : ""}>이전</button>
+            <button type="button" id="nextPage" ${page.page + 1 >= page.pages ? "disabled" : ""}>다음</button>
+        </div>
+    </section>
+    <section class="card" id="detail">${detail}</section>`;
+    for (const button of app.querySelectorAll("[data-boundary]")) {
+        button.onclick = () => {
+            studio.boundary = button.dataset.boundary;
+            studio.page = 0;
+            renderStudio();
+        };
+    }
+    document.getElementById("prevPage").onclick = () => { studio.page -= 1; renderStudio(); };
+    document.getElementById("nextPage").onclick = () => { studio.page += 1; renderStudio(); };
+    for (const button of app.querySelectorAll("[data-prompt]")) {
+        button.onclick = () => {
+            studio.prompt_id = Number(button.dataset.prompt);
+            studio.sample = Number(button.dataset.sample);
+            studio.id = null;
+            studio.caption = "";
+            studio.reason = "";
+            studio.answers = {};
+            studio.decoys = [];
+            studio.boundary = studio.boundary;
+            renderStudio();
+        };
+    }
+    for (const button of app.querySelectorAll("[data-edit-ref]")) {
+        button.onclick = () => {
+            const row = data.reference.find((item) => item.id === button.dataset.editRef);
+            if (!row) return;
+            studio.kind = "reference";
+            studio.id = row.id;
+            studio.prompt_id = row.prompt_id;
+            studio.sample = row.sample;
+            studio.axis = row.axis;
+            studio.caption = row.caption;
+            studio.boundary = row.boundary;
+            renderStudio();
+        };
+    }
+    for (const button of app.querySelectorAll("[data-edit-practice]")) {
+        button.onclick = () => {
+            const row = data.practice.find((item) => item.id === button.dataset.editPractice);
+            if (!row) return;
+            studio.kind = "practice";
+            studio.id = row.id;
+            studio.prompt_id = row.prompt_id;
+            studio.sample = row.sample;
+            studio.reason = row.reason;
+            studio.decoys = row.decoy_axes.slice();
+            studio.answers = Object.assign({}, row.answers);
+            studio.boundary = row.boundary;
+            renderStudio();
+        };
+    }
+    for (const button of app.querySelectorAll("[data-swap]")) {
+        button.onclick = async () => {
+            const status = document.getElementById("studioStatus");
+            try {
+                const saved = await api("/api/lead/reference/swap", {id: button.dataset.swap});
+                if (studio.id === button.dataset.swap) {
+                    studio.id = saved.example.id;
+                    studio.prompt_id = saved.example.prompt_id;
+                    studio.sample = saved.example.sample;
+                }
+                await renderStudio();
+                const next = document.getElementById("studioStatus");
+                if (next) next.textContent = "이 예시만 다른 그림으로 바꿨습니다. 문장은 그대로입니다.";
+            } catch (err) {
+                if (status) status.textContent = err.message;
+            }
+        };
+    }
+    for (const button of app.querySelectorAll("[data-delete]")) {
+        button.onclick = async () => {
+            await api("/api/lead/delete", {kind: button.dataset.delete, id: button.dataset.id});
+            if (studio.id === button.dataset.id) studio.id = null;
+            renderStudio();
+        };
+    }
+    document.getElementById("saveNote").onclick = async () => {
+        try {
+            await api("/api/lead/note", {note: document.getElementById("note").value});
+            document.getElementById("studioStatus").textContent = "설명을 저장했습니다. 다른 사람 가이드라인에 보입니다.";
+        } catch (err) {
+            document.getElementById("studioStatus").textContent = err.message;
+        }
+    };
+    document.getElementById("freeze").onclick = async () => {
+        await api("/api/lead/freeze", {frozen: !data.frozen});
+        renderStudio();
+    };
+    document.getElementById("batch2").onclick = async () => {
+        const result = await api("/api/lead/batches", {n: 2});
+        document.getElementById("studioStatus").textContent = result.lock_reason;
+    };
+    document.getElementById("batch3").onclick = async () => {
+        await api("/api/lead/batches", {n: 3});
+        document.getElementById("studioStatus").textContent = "Batch 3을 진행합니다.";
+    };
+    document.getElementById("backTask").onclick = async () => render(await api("/api/task"));
+    const kindRef = document.getElementById("kindRef");
+    if (kindRef) {
+        kindRef.onclick = () => { readStudioForm(); studio.kind = "reference"; renderStudio(); };
+        document.getElementById("kindPractice").onclick = () => { readStudioForm(); studio.kind = "practice"; renderStudio(); };
+        for (const box of app.querySelectorAll("[data-decoy]")) {
+            box.onchange = () => { readStudioForm(); renderStudio(); };
+        }
+        document.getElementById("saveExample").onclick = saveStudioExample;
+    }
+}
+
+function readStudioForm() {
+    const caption = document.getElementById("caption");
+    const reason = document.getElementById("reason");
+    const axis = document.getElementById("axis");
+    if (caption) studio.caption = caption.value;
+    if (reason) studio.reason = reason.value;
+    if (axis) studio.axis = axis.value;
+    studio.decoys = Array.from(app.querySelectorAll("[data-decoy]:checked")).map((box) => box.dataset.decoy);
+    const answers = {};
+    for (const input of app.querySelectorAll("input[type=radio]:checked")) {
+        if (input.name.startsWith("key-")) answers[input.name.slice(4)] = input.value;
+    }
+    if (Object.keys(answers).length) studio.answers = answers;
+}
+
+async function saveStudioExample() {
+    readStudioForm();
+    const err = document.getElementById("studioErr");
+    try {
+        if (studio.kind === "reference") {
+            const saved = await api("/api/lead/reference", {
+                id: studio.id,
+                prompt_id: studio.prompt_id,
+                sample: studio.sample,
+                axis: studio.axis,
+                boundary: studio.boundary,
+                caption: studio.caption,
+            });
+            studio.id = saved.example.id;
+        } else {
+            const saved = await api("/api/lead/practice", {
+                id: studio.id,
+                prompt_id: studio.prompt_id,
+                sample: studio.sample,
+                boundary: studio.boundary,
+                reason: studio.reason,
+                decoy_axes: studio.decoys,
+                answers: studio.answers,
+            });
+            studio.id = saved.example.id;
+        }
+        await renderStudio();
+        const status = document.getElementById("studioStatus");
+        if (status) status.textContent = "저장했습니다. 다른 사람이 접속하면 바로 보입니다.";
+    } catch (error) {
+        if (err) err.textContent = error.message;
+    }
+}
+
+async function manualSave() {
+    if (!annotator) return;
+    const fileState = document.getElementById("fileState");
+    if (fileState) fileState.textContent = "저장 중";
+    setSaveState("저장 중");
+    const payload = {};
+    if (shownKey && currentQuestions.length) {
+        const answers = collectPartial();
+        if (Object.keys(answers).length) {
+            payload.item_key = shownKey;
+            payload.answers = answers;
+            payload.draft_elapsed_ms = currentElapsed();
+            payload.memo = collectMemo();
+            rememberLocal(shownKey, answers, payload.draft_elapsed_ms, payload.memo);
+        }
+    }
+    try {
+        const saved = await api("/api/save", payload);
+        const line = `저장됨 · ${saved.n_items}장 · ${saved.path}`;
+        if (fileState) fileState.textContent = line;
+        setSaveState("저장됨");
+        return saved;
+    } catch (err) {
+        if (fileState) fileState.textContent = err.message;
+        setSaveState("이 브라우저에 보관 중");
+        throw err;
+    }
+}
+
+async function manualExport() {
+    if (!annotator) return;
+    const fileState = document.getElementById("fileState");
+    try {
+        await manualSave();
+        const res = await fetch(`/api/export?annotator=${encodeURIComponent(annotator)}`);
+        if (!res.ok) throw new Error("내보내기에 실패했습니다");
+        const blob = await res.blob();
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = `annotation_${annotator}.json`;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        URL.revokeObjectURL(url);
+        if (fileState) fileState.textContent = `annotation_${annotator}.json 을 받았습니다`;
+    } catch (err) {
+        if (fileState) fileState.textContent = err.message;
+    }
+}
+
+async function choose(name) {
+    annotator = name;
+    shownKey = null;
+    document.getElementById("leadBtn").hidden = name !== "희진";
+    document.getElementById("saveBtn").hidden = false;
+    document.getElementById("exportBtn").hidden = false;
+    render(await api("/api/task"));
+}
+
+async function boot() {
+    const data = await fetch("/api/annotators").then((res) => res.json());
+    meta.textContent = data.protocol;
+    app.innerHTML = `<section class="card">
+        <h2>이름을 고르세요</h2>
+        <p>네 명이 같은 그림을 봅니다. 희진이 만든 기준 예시는 접속하면 가이드라인에 보입니다.</p>
+        <div class="names">${data.annotators.map((name) =>
+            `<button class="primary" data-name="${esc(name)}">${esc(name)}</button>`).join("")}</div>
+    </section>`;
+    for (const button of app.querySelectorAll("button")) {
+        button.onclick = () => choose(button.dataset.name);
+    }
+}
+document.getElementById("leadBtn").onclick = () => openStudio();
+document.getElementById("saveBtn").onclick = () => manualSave();
+document.getElementById("exportBtn").onclick = () => manualExport();
+boot();
+</script>
+</body>
+</html>

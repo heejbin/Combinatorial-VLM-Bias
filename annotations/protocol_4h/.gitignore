@@ -1,0 +1,11 @@
+# Unpacked by run_annotation.sh. The committed copy is images.tar.gz.
+# The leading slash keeps protocol_4h/examples/images in git.
+/images/
+
+# Annotator answers and crash-recovery copies. Not part of the study package.
+responses/
+backup/
+runtime.json
+progress_*.json
+*.bak
+*.tmp

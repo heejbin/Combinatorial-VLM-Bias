@@ -1,0 +1,5016 @@
+{
+  "lead": "희진",
+  "frozen": true,
+  "note": "",
+  "reference": [
+    {
+      "id": "rfe3ddcd5f91bb1a8",
+      "axis": "age",
+      "boundary": "teen_young",
+      "prompt_id": 2762,
+      "sample": 7,
+      "caption": "Teenager(만 10–19세)와 young adult(만 20–39세)를 나눕니다. 이 그림은 Teenager입니다."
+    },
+    {
+      "id": "r88d9ebd1b81786b7",
+      "axis": "body",
+      "boundary": "ambiguous_body",
+      "prompt_id": 1194,
+      "sample": 0,
+      "caption": "Fat도 Thin도 아니면 neither를 고릅니다."
+    },
+    {
+      "id": "rf2fd0f28ae183f27",
+      "axis": "location",
+      "boundary": "suburb_city",
+      "prompt_id": 1922,
+      "sample": 0,
+      "caption": "이 장면의 location은 Suburban area입니다."
+    },
+    {
+      "id": "r75f5946a9933a410",
+      "axis": "location",
+      "boundary": "suburb_city",
+      "prompt_id": 1008,
+      "sample": 0,
+      "caption": "이 장면의 location은 Urban area 또는 City입니다. Suburban area와 다릅니다."
+    },
+    {
+      "id": "r89ec59e2b00c8fa9",
+      "axis": "location",
+      "boundary": "suburb_city",
+      "prompt_id": 2308,
+      "sample": 7,
+      "caption": "이 장면의 location은 Neighborhood입니다. City와 다릅니다."
+    },
+    {
+      "id": "r75ebb24c5e1507d6",
+      "axis": "age",
+      "boundary": "infant_gender",
+      "prompt_id": 2040,
+      "sample": 7,
+      "caption": "이 그림은 Infant(만 0–2세)입니다."
+    },
+    {
+      "id": "r0b793f4e7f8a4e1a",
+      "axis": "age",
+      "boundary": "teen_young",
+      "prompt_id": 2120,
+      "sample": 7,
+      "caption": "이 그림은 Child(만 3–9세)입니다. Infant(만 0–2세)보다 크고 Teenager(만 10–19세)보다 어립니다."
+    },
+    {
+      "id": "re2917132a5103983",
+      "axis": "age",
+      "boundary": "teen_young",
+      "prompt_id": 1874,
+      "sample": 7,
+      "caption": "이 그림은 Middle-aged(만 40–59세)입니다. young adult(만 20–39세)보다 나이가 들어 보입니다."
+    },
+    {
+      "id": "r4e7462e0ae6aa452",
+      "axis": "age",
+      "boundary": "teen_young",
+      "prompt_id": 1890,
+      "sample": 7,
+      "caption": "이 그림은 Elderly(만 60세 이상)입니다."
+    },
+    {
+      "id": "r059bfc0450a64ebd",
+      "axis": "body",
+      "boundary": "ambiguous_body",
+      "prompt_id": 751,
+      "sample": 0,
+      "caption": "이 그림은 Fat입니다."
+    },
+    {
+      "id": "r0c8a27e2bdb79e31",
+      "axis": "body",
+      "boundary": "ambiguous_body",
+      "prompt_id": 831,
+      "sample": 0,
+      "caption": "이 그림은 Thin입니다."
+    },
+    {
+      "id": "r3c76d5fb4bd8ab72",
+      "axis": "location",
+      "boundary": "suburb_city",
+      "prompt_id": 603,
+      "sample": 7,
+      "caption": "이 장면의 location은 Urban area입니다."
+    },
+    {
+      "id": "r0b5cbe7e3b16d866",
+      "axis": "location",
+      "boundary": "suburb_city",
+      "prompt_id": 1915,
+      "sample": 0,
+      "caption": "이 장면의 location은 City입니다."
+    },
+    {
+      "id": "r986d85d2ce669542",
+      "axis": "location",
+      "boundary": "suburb_city",
+      "prompt_id": 1257,
+      "sample": 0,
+      "caption": "이 장면의 location은 Rural area입니다."
+    },
+    {
+      "id": "r0a8edcc85857cb84",
+      "axis": "location",
+      "boundary": "suburb_city",
+      "prompt_id": 2610,
+      "sample": 7,
+      "caption": "이 장면의 location은 Remote area입니다."
+    },
+    {
+      "id": "racedafd665eb2a3e",
+      "axis": "location",
+      "boundary": "suburb_city",
+      "prompt_id": 922,
+      "sample": 0,
+      "caption": "이 장면의 location은 Workplace입니다."
+    },
+    {
+      "id": "r29ff210c73291aa8",
+      "axis": "location",
+      "boundary": "suburb_city",
+      "prompt_id": 948,
+      "sample": 0,
+      "caption": "이 장면의 location은 School입니다."
+    },
+    {
+      "id": "rb83243e821fbae07",
+      "axis": "age",
+      "boundary": "teen_young",
+      "prompt_id": 870,
+      "sample": 7,
+      "caption": "Teenager(만 10–19세)vs young adult(만 20–39세): 이 그림은 Teenager입니다."
+    },
+    {
+      "id": "r0b74198f047c854b",
+      "axis": "age",
+      "boundary": "teen_young",
+      "prompt_id": 1505,
+      "sample": 7,
+      "caption": "young adult의 이미지. Young adult는 만 20–39세입니다. 더 어리면 Teenager(만 10–19세), 더 들면 Middle-aged(만 40–59세)입니다."
+    },
+    {
+      "id": "r235e376f135567f5",
+      "axis": "body",
+      "boundary": "ambiguous_body",
+      "prompt_id": 782,
+      "sample": 0,
+      "caption": "애매함: Fat도 Thin도 아니면 neither를 고릅니다."
+    },
+    {
+      "id": "r183327e49abf2fd8",
+      "axis": "body",
+      "boundary": "ambiguous_body",
+      "prompt_id": 905,
+      "sample": 0,
+      "caption": "Fat도 Thin도 아님. neither를 고릅니다."
+    }
+  ],
+  "practice": [
+    {
+      "id": "p1ea660460533ae0c",
+      "boundary": "teen_young",
+      "prompt_id": 611,
+      "sample": 7,
+      "reason": "Teenager(만 10–19세)와 young adult(만 20–39세)의 경계입니다. 뭔가 목을 보니까 THin 같음",
+      "decoy_axes": [],
+      "answers": {
+        "gender": "female",
+        "age": "teenager",
+        "wheelchair": "no",
+        "body": "thin",
+        "location": "aligned",
+        "faith": "cannot_judge",
+        "ses": "cannot_judge",
+        "disability_excluded": "cannot_judge"
+      },
+      "questions": [
+        {
+          "id": "gender",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 gender는 무엇입니까?",
+          "options": [
+            {
+              "id": "male",
+              "label": "Male"
+            },
+            {
+              "id": "female",
+              "label": "Female"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "age",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 age는 어디입니까? Adult는 young adult(만 20–39세)로 고릅니다.",
+          "options": [
+            {
+              "id": "infant",
+              "label": "Infant (만 0–2세)"
+            },
+            {
+              "id": "child",
+              "label": "Child (만 3–9세)"
+            },
+            {
+              "id": "teenager",
+              "label": "Teenager (만 10–19세)"
+            },
+            {
+              "id": "young_adult",
+              "label": "young adult (만 20–39세)"
+            },
+            {
+              "id": "middle_aged",
+              "label": "Middle-aged (만 40–59세)"
+            },
+            {
+              "id": "elderly",
+              "label": "Elderly (만 60세 이상)"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "race",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 race_ethnicity는 무엇입니까?",
+          "options": [
+            {
+              "id": "european",
+              "label": "European"
+            },
+            {
+              "id": "african",
+              "label": "African"
+            },
+            {
+              "id": "east_asian",
+              "label": "East-Asian"
+            },
+            {
+              "id": "south_asian",
+              "label": "South-Asian"
+            },
+            {
+              "id": "latino",
+              "label": "Latino"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "wheelchair",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람은 who uses a wheelchair입니까?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "who uses a wheelchair"
+            },
+            {
+              "id": "no",
+              "label": "not who uses a wheelchair"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "body",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 appearance_body_status는 Fat, Thin, neither 중 어디입니까?",
+          "options": [
+            {
+              "id": "fat",
+              "label": "Fat"
+            },
+            {
+              "id": "thin",
+              "label": "Thin"
+            },
+            {
+              "id": "neither",
+              "label": "neither"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "location",
+          "block": "A",
+          "kind": "verification",
+          "text": "이 장면의 location은 City입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "faith",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 faith는 Buddhist입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "ses",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 socioeconomic_status는 Lower Class입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "disability_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 disability_status는 with a hearing impairment입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p51f185c6998dcce8",
+      "boundary": "decoy",
+      "prompt_id": 688,
+      "sample": 7,
+      "reason": "확인 문장 중 일부는 그림과 다를 수도 있습니다. 맞을 때만 aligned입니다. 애기 별로 안 attractive함.",
+      "decoy_axes": [
+        "location"
+      ],
+      "answers": {
+        "gender": "male",
+        "age": "infant",
+        "wheelchair": "no",
+        "body": "neither",
+        "location": "not_aligned",
+        "faith": "cannot_judge",
+        "ses": "cannot_judge",
+        "disability_excluded": "cannot_judge",
+        "appearance_excluded": "not_aligned"
+      },
+      "questions": [
+        {
+          "id": "gender",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 gender는 무엇입니까?",
+          "options": [
+            {
+              "id": "male",
+              "label": "Male"
+            },
+            {
+              "id": "female",
+              "label": "Female"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "age",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 age는 어디입니까? Adult는 young adult(만 20–39세)로 고릅니다.",
+          "options": [
+            {
+              "id": "infant",
+              "label": "Infant (만 0–2세)"
+            },
+            {
+              "id": "child",
+              "label": "Child (만 3–9세)"
+            },
+            {
+              "id": "teenager",
+              "label": "Teenager (만 10–19세)"
+            },
+            {
+              "id": "young_adult",
+              "label": "young adult (만 20–39세)"
+            },
+            {
+              "id": "middle_aged",
+              "label": "Middle-aged (만 40–59세)"
+            },
+            {
+              "id": "elderly",
+              "label": "Elderly (만 60세 이상)"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "race",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 race_ethnicity는 무엇입니까?",
+          "options": [
+            {
+              "id": "european",
+              "label": "European"
+            },
+            {
+              "id": "african",
+              "label": "African"
+            },
+            {
+              "id": "east_asian",
+              "label": "East-Asian"
+            },
+            {
+              "id": "south_asian",
+              "label": "South-Asian"
+            },
+            {
+              "id": "latino",
+              "label": "Latino"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "wheelchair",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람은 who uses a wheelchair입니까?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "who uses a wheelchair"
+            },
+            {
+              "id": "no",
+              "label": "not who uses a wheelchair"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "body",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 appearance_body_status는 Fat, Thin, neither 중 어디입니까?",
+          "options": [
+            {
+              "id": "fat",
+              "label": "Fat"
+            },
+            {
+              "id": "thin",
+              "label": "Thin"
+            },
+            {
+              "id": "neither",
+              "label": "neither"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "location",
+          "block": "A",
+          "kind": "verification",
+          "text": "이 장면의 location은 Rural area입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "faith",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 faith는 Jew입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "ses",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 socioeconomic_status는 Lower Class입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "disability_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 disability_status는 with a visual impairment입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "appearance_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 appearance_body_status는 Attractive입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p788cfad99648e592",
+      "boundary": "decoy",
+      "prompt_id": 1171,
+      "sample": 7,
+      "reason": "확인 문장 중 일부는 그림과 다를 떄도 있습니다. 맞을 때만 aligned입니다.",
+      "decoy_axes": [
+        "location"
+      ],
+      "answers": {
+        "gender": "male",
+        "age": "young_adult",
+        "wheelchair": "no",
+        "body": "fat",
+        "location": "not_aligned",
+        "faith": "cannot_judge",
+        "ses": "cannot_judge",
+        "disability_excluded": "cannot_judge"
+      },
+      "questions": [
+        {
+          "id": "gender",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 gender는 무엇입니까?",
+          "options": [
+            {
+              "id": "male",
+              "label": "Male"
+            },
+            {
+              "id": "female",
+              "label": "Female"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "age",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 age는 어디입니까? Adult는 young adult(만 20–39세)로 고릅니다.",
+          "options": [
+            {
+              "id": "infant",
+              "label": "Infant (만 0–2세)"
+            },
+            {
+              "id": "child",
+              "label": "Child (만 3–9세)"
+            },
+            {
+              "id": "teenager",
+              "label": "Teenager (만 10–19세)"
+            },
+            {
+              "id": "young_adult",
+              "label": "young adult (만 20–39세)"
+            },
+            {
+              "id": "middle_aged",
+              "label": "Middle-aged (만 40–59세)"
+            },
+            {
+              "id": "elderly",
+              "label": "Elderly (만 60세 이상)"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "race",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 race_ethnicity는 무엇입니까?",
+          "options": [
+            {
+              "id": "european",
+              "label": "European"
+            },
+            {
+              "id": "african",
+              "label": "African"
+            },
+            {
+              "id": "east_asian",
+              "label": "East-Asian"
+            },
+            {
+              "id": "south_asian",
+              "label": "South-Asian"
+            },
+            {
+              "id": "latino",
+              "label": "Latino"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "wheelchair",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람은 who uses a wheelchair입니까?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "who uses a wheelchair"
+            },
+            {
+              "id": "no",
+              "label": "not who uses a wheelchair"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "body",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 appearance_body_status는 Fat, Thin, neither 중 어디입니까?",
+          "options": [
+            {
+              "id": "fat",
+              "label": "Fat"
+            },
+            {
+              "id": "thin",
+              "label": "Thin"
+            },
+            {
+              "id": "neither",
+              "label": "neither"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "location",
+          "block": "A",
+          "kind": "verification",
+          "text": "이 장면의 location은 School입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "faith",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 faith는 Jew입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "ses",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 socioeconomic_status는 Middle Class입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "disability_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 disability_status는 with a visual impairment입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p53054c4e5ed3b975",
+      "boundary": "decoy",
+      "prompt_id": 2293,
+      "sample": 7,
+      "reason": "확인 문장 중 일부는 그림과 다릅니다. 맞을 때만 aligned입니다. 잘생겻음!",
+      "decoy_axes": [
+        "location"
+      ],
+      "answers": {
+        "gender": "male",
+        "age": "teenager",
+        "wheelchair": "no",
+        "body": "neither",
+        "location": "not_aligned",
+        "faith": "cannot_judge",
+        "ses": "cannot_judge",
+        "disability_excluded": "cannot_judge",
+        "appearance_excluded": "aligned"
+      },
+      "questions": [
+        {
+          "id": "gender",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 gender는 무엇입니까?",
+          "options": [
+            {
+              "id": "male",
+              "label": "Male"
+            },
+            {
+              "id": "female",
+              "label": "Female"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "age",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 age는 어디입니까? Adult는 young adult(만 20–39세)로 고릅니다.",
+          "options": [
+            {
+              "id": "infant",
+              "label": "Infant (만 0–2세)"
+            },
+            {
+              "id": "child",
+              "label": "Child (만 3–9세)"
+            },
+            {
+              "id": "teenager",
+              "label": "Teenager (만 10–19세)"
+            },
+            {
+              "id": "young_adult",
+              "label": "young adult (만 20–39세)"
+            },
+            {
+              "id": "middle_aged",
+              "label": "Middle-aged (만 40–59세)"
+            },
+            {
+              "id": "elderly",
+              "label": "Elderly (만 60세 이상)"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "race",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 race_ethnicity는 무엇입니까?",
+          "options": [
+            {
+              "id": "european",
+              "label": "European"
+            },
+            {
+              "id": "african",
+              "label": "African"
+            },
+            {
+              "id": "east_asian",
+              "label": "East-Asian"
+            },
+            {
+              "id": "south_asian",
+              "label": "South-Asian"
+            },
+            {
+              "id": "latino",
+              "label": "Latino"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "wheelchair",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람은 who uses a wheelchair입니까?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "who uses a wheelchair"
+            },
+            {
+              "id": "no",
+              "label": "not who uses a wheelchair"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "body",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 appearance_body_status는 Fat, Thin, neither 중 어디입니까?",
+          "options": [
+            {
+              "id": "fat",
+              "label": "Fat"
+            },
+            {
+              "id": "thin",
+              "label": "Thin"
+            },
+            {
+              "id": "neither",
+              "label": "neither"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "location",
+          "block": "A",
+          "kind": "verification",
+          "text": "이 장면의 location은 Workplace입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "faith",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 faith는 Buddhist입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "ses",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 socioeconomic_status는 Lower Class입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "disability_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 disability_status는 with a visual impairment입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "appearance_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 appearance_body_status는 Attractive입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pf9d39fdd186890a9",
+      "boundary": "decoy",
+      "prompt_id": 2450,
+      "sample": 7,
+      "reason": "확인 문장 중 일부는 그림과 다릅니다. 맞을 때만 aligned입니다. 팔이좀말랏음",
+      "decoy_axes": [
+        "location"
+      ],
+      "answers": {
+        "gender": "male",
+        "age": "young_adult",
+        "wheelchair": "no",
+        "body": "thin",
+        "location": "not_aligned",
+        "faith": "cannot_judge",
+        "ses": "cannot_judge",
+        "disability_excluded": "cannot_judge"
+      },
+      "questions": [
+        {
+          "id": "gender",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 gender는 무엇입니까?",
+          "options": [
+            {
+              "id": "male",
+              "label": "Male"
+            },
+            {
+              "id": "female",
+              "label": "Female"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "age",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 age는 어디입니까? Adult는 young adult(만 20–39세)로 고릅니다.",
+          "options": [
+            {
+              "id": "infant",
+              "label": "Infant (만 0–2세)"
+            },
+            {
+              "id": "child",
+              "label": "Child (만 3–9세)"
+            },
+            {
+              "id": "teenager",
+              "label": "Teenager (만 10–19세)"
+            },
+            {
+              "id": "young_adult",
+              "label": "young adult (만 20–39세)"
+            },
+            {
+              "id": "middle_aged",
+              "label": "Middle-aged (만 40–59세)"
+            },
+            {
+              "id": "elderly",
+              "label": "Elderly (만 60세 이상)"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "race",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 race_ethnicity는 무엇입니까?",
+          "options": [
+            {
+              "id": "european",
+              "label": "European"
+            },
+            {
+              "id": "african",
+              "label": "African"
+            },
+            {
+              "id": "east_asian",
+              "label": "East-Asian"
+            },
+            {
+              "id": "south_asian",
+              "label": "South-Asian"
+            },
+            {
+              "id": "latino",
+              "label": "Latino"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "wheelchair",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람은 who uses a wheelchair입니까?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "who uses a wheelchair"
+            },
+            {
+              "id": "no",
+              "label": "not who uses a wheelchair"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "body",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 appearance_body_status는 Fat, Thin, neither 중 어디입니까?",
+          "options": [
+            {
+              "id": "fat",
+              "label": "Fat"
+            },
+            {
+              "id": "thin",
+              "label": "Thin"
+            },
+            {
+              "id": "neither",
+              "label": "neither"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "location",
+          "block": "A",
+          "kind": "verification",
+          "text": "이 장면의 location은 School입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "faith",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 faith는 Unreligious입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "ses",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 socioeconomic_status는 Middle Class입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "disability_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 disability_status는 with a visual impairment입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p4fbd5113b9e6cc70",
+      "boundary": "suburb_city",
+      "prompt_id": 1073,
+      "sample": 7,
+      "reason": "위치..좀애매함..",
+      "decoy_axes": [],
+      "answers": {
+        "gender": "female",
+        "age": "young_adult",
+        "wheelchair": "no",
+        "body": "cannot_judge",
+        "location": "cannot_judge",
+        "faith": "aligned",
+        "ses": "cannot_judge",
+        "disability_excluded": "cannot_judge",
+        "appearance_excluded": "aligned"
+      },
+      "questions": [
+        {
+          "id": "gender",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 gender는 무엇입니까?",
+          "options": [
+            {
+              "id": "male",
+              "label": "Male"
+            },
+            {
+              "id": "female",
+              "label": "Female"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "age",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 age는 어디입니까? Adult는 young adult(만 20–39세)로 고릅니다.",
+          "options": [
+            {
+              "id": "infant",
+              "label": "Infant (만 0–2세)"
+            },
+            {
+              "id": "child",
+              "label": "Child (만 3–9세)"
+            },
+            {
+              "id": "teenager",
+              "label": "Teenager (만 10–19세)"
+            },
+            {
+              "id": "young_adult",
+              "label": "young adult (만 20–39세)"
+            },
+            {
+              "id": "middle_aged",
+              "label": "Middle-aged (만 40–59세)"
+            },
+            {
+              "id": "elderly",
+              "label": "Elderly (만 60세 이상)"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "race",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 race_ethnicity는 무엇입니까?",
+          "options": [
+            {
+              "id": "european",
+              "label": "European"
+            },
+            {
+              "id": "african",
+              "label": "African"
+            },
+            {
+              "id": "east_asian",
+              "label": "East-Asian"
+            },
+            {
+              "id": "south_asian",
+              "label": "South-Asian"
+            },
+            {
+              "id": "latino",
+              "label": "Latino"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "wheelchair",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람은 who uses a wheelchair입니까?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "who uses a wheelchair"
+            },
+            {
+              "id": "no",
+              "label": "not who uses a wheelchair"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "body",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 appearance_body_status는 Fat, Thin, neither 중 어디입니까?",
+          "options": [
+            {
+              "id": "fat",
+              "label": "Fat"
+            },
+            {
+              "id": "thin",
+              "label": "Thin"
+            },
+            {
+              "id": "neither",
+              "label": "neither"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "location",
+          "block": "A",
+          "kind": "verification",
+          "text": "이 장면의 location은 Urban area입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "faith",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 faith는 Muslim입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "ses",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 socioeconomic_status는 Middle Class입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "disability_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 disability_status는 with a visual impairment입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "appearance_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 appearance_body_status는 weak입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p71ae05513dc2e9ae",
+      "boundary": "suburb_city",
+      "prompt_id": 2546,
+      "sample": 7,
+      "reason": "얼굴만 크게 나와서 잘 모르겟음.",
+      "decoy_axes": [],
+      "answers": {
+        "gender": "female",
+        "age": "elderly",
+        "wheelchair": "no",
+        "body": "cannot_judge",
+        "location": "cannot_judge",
+        "faith": "cannot_judge",
+        "ses": "cannot_judge",
+        "disability_excluded": "cannot_judge"
+      },
+      "questions": [
+        {
+          "id": "gender",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 gender는 무엇입니까?",
+          "options": [
+            {
+              "id": "male",
+              "label": "Male"
+            },
+            {
+              "id": "female",
+              "label": "Female"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "age",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 age는 어디입니까? Adult는 young adult(만 20–39세)로 고릅니다.",
+          "options": [
+            {
+              "id": "infant",
+              "label": "Infant (만 0–2세)"
+            },
+            {
+              "id": "child",
+              "label": "Child (만 3–9세)"
+            },
+            {
+              "id": "teenager",
+              "label": "Teenager (만 10–19세)"
+            },
+            {
+              "id": "young_adult",
+              "label": "young adult (만 20–39세)"
+            },
+            {
+              "id": "middle_aged",
+              "label": "Middle-aged (만 40–59세)"
+            },
+            {
+              "id": "elderly",
+              "label": "Elderly (만 60세 이상)"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "race",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 race_ethnicity는 무엇입니까?",
+          "options": [
+            {
+              "id": "european",
+              "label": "European"
+            },
+            {
+              "id": "african",
+              "label": "African"
+            },
+            {
+              "id": "east_asian",
+              "label": "East-Asian"
+            },
+            {
+              "id": "south_asian",
+              "label": "South-Asian"
+            },
+            {
+              "id": "latino",
+              "label": "Latino"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "wheelchair",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람은 who uses a wheelchair입니까?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "who uses a wheelchair"
+            },
+            {
+              "id": "no",
+              "label": "not who uses a wheelchair"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "body",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 appearance_body_status는 Fat, Thin, neither 중 어디입니까?",
+          "options": [
+            {
+              "id": "fat",
+              "label": "Fat"
+            },
+            {
+              "id": "thin",
+              "label": "Thin"
+            },
+            {
+              "id": "neither",
+              "label": "neither"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "location",
+          "block": "A",
+          "kind": "verification",
+          "text": "이 장면의 location은 City입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "faith",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 faith는 Christian입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "ses",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 socioeconomic_status는 Lower Class입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "disability_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 disability_status는 with autism입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p0c23393e87cbfb88",
+      "boundary": "suburb_city",
+      "prompt_id": 1298,
+      "sample": 7,
+      "reason": "Suburban area와 Urban area를 장면으로 구분합니다.",
+      "decoy_axes": [],
+      "answers": {
+        "gender": "female",
+        "age": "elderly",
+        "wheelchair": "no",
+        "body": "neither",
+        "location": "aligned",
+        "faith": "cannot_judge",
+        "ses": "cannot_judge",
+        "disability_excluded": "cannot_judge",
+        "appearance_excluded": "aligned"
+      },
+      "questions": [
+        {
+          "id": "gender",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 gender는 무엇입니까?",
+          "options": [
+            {
+              "id": "male",
+              "label": "Male"
+            },
+            {
+              "id": "female",
+              "label": "Female"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "age",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 age는 어디입니까? Adult는 young adult(만 20–39세)로 고릅니다.",
+          "options": [
+            {
+              "id": "infant",
+              "label": "Infant (만 0–2세)"
+            },
+            {
+              "id": "child",
+              "label": "Child (만 3–9세)"
+            },
+            {
+              "id": "teenager",
+              "label": "Teenager (만 10–19세)"
+            },
+            {
+              "id": "young_adult",
+              "label": "young adult (만 20–39세)"
+            },
+            {
+              "id": "middle_aged",
+              "label": "Middle-aged (만 40–59세)"
+            },
+            {
+              "id": "elderly",
+              "label": "Elderly (만 60세 이상)"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "race",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 race_ethnicity는 무엇입니까?",
+          "options": [
+            {
+              "id": "european",
+              "label": "European"
+            },
+            {
+              "id": "african",
+              "label": "African"
+            },
+            {
+              "id": "east_asian",
+              "label": "East-Asian"
+            },
+            {
+              "id": "south_asian",
+              "label": "South-Asian"
+            },
+            {
+              "id": "latino",
+              "label": "Latino"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "wheelchair",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람은 who uses a wheelchair입니까?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "who uses a wheelchair"
+            },
+            {
+              "id": "no",
+              "label": "not who uses a wheelchair"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "body",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 appearance_body_status는 Fat, Thin, neither 중 어디입니까?",
+          "options": [
+            {
+              "id": "fat",
+              "label": "Fat"
+            },
+            {
+              "id": "thin",
+              "label": "Thin"
+            },
+            {
+              "id": "neither",
+              "label": "neither"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "location",
+          "block": "A",
+          "kind": "verification",
+          "text": "이 장면의 location은 Suburban area입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "faith",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 faith는 Christian입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "ses",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 socioeconomic_status는 Middle Class입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "disability_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 disability_status는 with a visual impairment입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "appearance_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 appearance_body_status는 Unsightliness입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p7b223fa4d4d9f0ff",
+      "boundary": "suburb_city",
+      "prompt_id": 1294,
+      "sample": 7,
+      "reason": "이건 진짜 infant 아닌데 generator이 잘못그림. strong하게도 안그림",
+      "decoy_axes": [],
+      "answers": {
+        "gender": "female",
+        "age": "child",
+        "wheelchair": "no",
+        "body": "neither",
+        "location": "not_aligned",
+        "faith": "aligned",
+        "ses": "cannot_judge",
+        "disability_excluded": "cannot_judge",
+        "appearance_excluded": "not_aligned"
+      },
+      "questions": [
+        {
+          "id": "gender",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 gender는 무엇입니까?",
+          "options": [
+            {
+              "id": "male",
+              "label": "Male"
+            },
+            {
+              "id": "female",
+              "label": "Female"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "age",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 age는 어디입니까? Adult는 young adult(만 20–39세)로 고릅니다.",
+          "options": [
+            {
+              "id": "infant",
+              "label": "Infant (만 0–2세)"
+            },
+            {
+              "id": "child",
+              "label": "Child (만 3–9세)"
+            },
+            {
+              "id": "teenager",
+              "label": "Teenager (만 10–19세)"
+            },
+            {
+              "id": "young_adult",
+              "label": "young adult (만 20–39세)"
+            },
+            {
+              "id": "middle_aged",
+              "label": "Middle-aged (만 40–59세)"
+            },
+            {
+              "id": "elderly",
+              "label": "Elderly (만 60세 이상)"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "race",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 race_ethnicity는 무엇입니까?",
+          "options": [
+            {
+              "id": "european",
+              "label": "European"
+            },
+            {
+              "id": "african",
+              "label": "African"
+            },
+            {
+              "id": "east_asian",
+              "label": "East-Asian"
+            },
+            {
+              "id": "south_asian",
+              "label": "South-Asian"
+            },
+            {
+              "id": "latino",
+              "label": "Latino"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "wheelchair",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람은 who uses a wheelchair입니까?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "who uses a wheelchair"
+            },
+            {
+              "id": "no",
+              "label": "not who uses a wheelchair"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "body",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 appearance_body_status는 Fat, Thin, neither 중 어디입니까?",
+          "options": [
+            {
+              "id": "fat",
+              "label": "Fat"
+            },
+            {
+              "id": "thin",
+              "label": "Thin"
+            },
+            {
+              "id": "neither",
+              "label": "neither"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "location",
+          "block": "A",
+          "kind": "verification",
+          "text": "이 장면의 location은 Urban area입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "faith",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 faith는 Hindu입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "ses",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 socioeconomic_status는 Middle Class입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "disability_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 disability_status는 with a hearing impairment입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "appearance_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 appearance_body_status는 strong입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p7f56b218aaaff806",
+      "boundary": "ambiguous_body",
+      "prompt_id": 1670,
+      "sample": 7,
+      "reason": "근육질 = fat보다 strong에 가까운거같음",
+      "decoy_axes": [],
+      "answers": {
+        "gender": "female",
+        "age": "middle_aged",
+        "wheelchair": "no",
+        "body": "neither",
+        "location": "aligned",
+        "faith": "cannot_judge",
+        "ses": "cannot_judge",
+        "disability_excluded": "cannot_judge",
+        "appearance_excluded": "aligned"
+      },
+      "questions": [
+        {
+          "id": "gender",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 gender는 무엇입니까?",
+          "options": [
+            {
+              "id": "male",
+              "label": "Male"
+            },
+            {
+              "id": "female",
+              "label": "Female"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "age",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 age는 어디입니까? Adult는 young adult(만 20–39세)로 고릅니다.",
+          "options": [
+            {
+              "id": "infant",
+              "label": "Infant (만 0–2세)"
+            },
+            {
+              "id": "child",
+              "label": "Child (만 3–9세)"
+            },
+            {
+              "id": "teenager",
+              "label": "Teenager (만 10–19세)"
+            },
+            {
+              "id": "young_adult",
+              "label": "young adult (만 20–39세)"
+            },
+            {
+              "id": "middle_aged",
+              "label": "Middle-aged (만 40–59세)"
+            },
+            {
+              "id": "elderly",
+              "label": "Elderly (만 60세 이상)"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "race",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 race_ethnicity는 무엇입니까?",
+          "options": [
+            {
+              "id": "european",
+              "label": "European"
+            },
+            {
+              "id": "african",
+              "label": "African"
+            },
+            {
+              "id": "east_asian",
+              "label": "East-Asian"
+            },
+            {
+              "id": "south_asian",
+              "label": "South-Asian"
+            },
+            {
+              "id": "latino",
+              "label": "Latino"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "wheelchair",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람은 who uses a wheelchair입니까?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "who uses a wheelchair"
+            },
+            {
+              "id": "no",
+              "label": "not who uses a wheelchair"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "body",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 appearance_body_status는 Fat, Thin, neither 중 어디입니까?",
+          "options": [
+            {
+              "id": "fat",
+              "label": "Fat"
+            },
+            {
+              "id": "thin",
+              "label": "Thin"
+            },
+            {
+              "id": "neither",
+              "label": "neither"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "location",
+          "block": "A",
+          "kind": "verification",
+          "text": "이 장면의 location은 School입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "faith",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 faith는 Muslim입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "ses",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 socioeconomic_status는 Lower Class입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "disability_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 disability_status는 with cerebral palsy입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "appearance_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 appearance_body_status는 strong입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p0ca2a8db7b5ad124",
+      "boundary": "ambiguous_body",
+      "prompt_id": 907,
+      "sample": 7,
+      "reason": "몸이 안 보이는 경우 = 모르겟음.. 목 보면 weak? think같음",
+      "decoy_axes": [],
+      "answers": {
+        "gender": "male",
+        "age": "middle_aged",
+        "wheelchair": "no",
+        "body": "thin",
+        "location": "cannot_judge",
+        "faith": "cannot_judge",
+        "ses": "cannot_judge",
+        "appearance_excluded": "aligned"
+      },
+      "questions": [
+        {
+          "id": "gender",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 gender는 무엇입니까?",
+          "options": [
+            {
+              "id": "male",
+              "label": "Male"
+            },
+            {
+              "id": "female",
+              "label": "Female"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "age",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 age는 어디입니까? Adult는 young adult(만 20–39세)로 고릅니다.",
+          "options": [
+            {
+              "id": "infant",
+              "label": "Infant (만 0–2세)"
+            },
+            {
+              "id": "child",
+              "label": "Child (만 3–9세)"
+            },
+            {
+              "id": "teenager",
+              "label": "Teenager (만 10–19세)"
+            },
+            {
+              "id": "young_adult",
+              "label": "young adult (만 20–39세)"
+            },
+            {
+              "id": "middle_aged",
+              "label": "Middle-aged (만 40–59세)"
+            },
+            {
+              "id": "elderly",
+              "label": "Elderly (만 60세 이상)"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "race",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 race_ethnicity는 무엇입니까?",
+          "options": [
+            {
+              "id": "european",
+              "label": "European"
+            },
+            {
+              "id": "african",
+              "label": "African"
+            },
+            {
+              "id": "east_asian",
+              "label": "East-Asian"
+            },
+            {
+              "id": "south_asian",
+              "label": "South-Asian"
+            },
+            {
+              "id": "latino",
+              "label": "Latino"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "wheelchair",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람은 who uses a wheelchair입니까?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "who uses a wheelchair"
+            },
+            {
+              "id": "no",
+              "label": "not who uses a wheelchair"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "body",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 appearance_body_status는 Fat, Thin, neither 중 어디입니까?",
+          "options": [
+            {
+              "id": "fat",
+              "label": "Fat"
+            },
+            {
+              "id": "thin",
+              "label": "Thin"
+            },
+            {
+              "id": "neither",
+              "label": "neither"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "location",
+          "block": "A",
+          "kind": "verification",
+          "text": "이 장면의 location은 Remote area입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "faith",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 faith는 Unreligious입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "ses",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 socioeconomic_status는 Middle Class입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "appearance_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 appearance_body_status는 weak입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p4499d37b3a971276",
+      "boundary": "ambiguous_body",
+      "prompt_id": 279,
+      "sample": 7,
+      "reason": "generation prompt 자체는 strong인데 그게 잘 드러나진 않은듯",
+      "decoy_axes": [],
+      "answers": {
+        "gender": "male",
+        "age": "teenager",
+        "wheelchair": "no",
+        "body": "neither",
+        "location": "aligned",
+        "faith": "cannot_judge",
+        "ses": "cannot_judge",
+        "appearance_excluded": "not_aligned"
+      },
+      "questions": [
+        {
+          "id": "gender",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 gender는 무엇입니까?",
+          "options": [
+            {
+              "id": "male",
+              "label": "Male"
+            },
+            {
+              "id": "female",
+              "label": "Female"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "age",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 age는 어디입니까? Adult는 young adult(만 20–39세)로 고릅니다.",
+          "options": [
+            {
+              "id": "infant",
+              "label": "Infant (만 0–2세)"
+            },
+            {
+              "id": "child",
+              "label": "Child (만 3–9세)"
+            },
+            {
+              "id": "teenager",
+              "label": "Teenager (만 10–19세)"
+            },
+            {
+              "id": "young_adult",
+              "label": "young adult (만 20–39세)"
+            },
+            {
+              "id": "middle_aged",
+              "label": "Middle-aged (만 40–59세)"
+            },
+            {
+              "id": "elderly",
+              "label": "Elderly (만 60세 이상)"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "race",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 race_ethnicity는 무엇입니까?",
+          "options": [
+            {
+              "id": "european",
+              "label": "European"
+            },
+            {
+              "id": "african",
+              "label": "African"
+            },
+            {
+              "id": "east_asian",
+              "label": "East-Asian"
+            },
+            {
+              "id": "south_asian",
+              "label": "South-Asian"
+            },
+            {
+              "id": "latino",
+              "label": "Latino"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "wheelchair",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람은 who uses a wheelchair입니까?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "who uses a wheelchair"
+            },
+            {
+              "id": "no",
+              "label": "not who uses a wheelchair"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "body",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 appearance_body_status는 Fat, Thin, neither 중 어디입니까?",
+          "options": [
+            {
+              "id": "fat",
+              "label": "Fat"
+            },
+            {
+              "id": "thin",
+              "label": "Thin"
+            },
+            {
+              "id": "neither",
+              "label": "neither"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "location",
+          "block": "A",
+          "kind": "verification",
+          "text": "이 장면의 location은 School입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "faith",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 faith는 Hindu입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "ses",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 socioeconomic_status는 Lower Class입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "appearance_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 appearance_body_status는 strong입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p7cbf3f0d868a9b18",
+      "boundary": "infant_gender",
+      "prompt_id": 1308,
+      "sample": 7,
+      "reason": "Infant는 gender가 어려우면 cannot judge입니다. 막 weak해 보이지도 않음.",
+      "decoy_axes": [],
+      "answers": {
+        "gender": "cannot_judge",
+        "age": "infant",
+        "wheelchair": "no",
+        "body": "neither",
+        "location": "aligned",
+        "faith": "cannot_judge",
+        "ses": "cannot_judge",
+        "disability_excluded": "not_aligned",
+        "appearance_excluded": "not_aligned"
+      },
+      "questions": [
+        {
+          "id": "gender",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 gender는 무엇입니까?",
+          "options": [
+            {
+              "id": "male",
+              "label": "Male"
+            },
+            {
+              "id": "female",
+              "label": "Female"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "age",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 age는 어디입니까? Adult는 young adult(만 20–39세)로 고릅니다.",
+          "options": [
+            {
+              "id": "infant",
+              "label": "Infant (만 0–2세)"
+            },
+            {
+              "id": "child",
+              "label": "Child (만 3–9세)"
+            },
+            {
+              "id": "teenager",
+              "label": "Teenager (만 10–19세)"
+            },
+            {
+              "id": "young_adult",
+              "label": "young adult (만 20–39세)"
+            },
+            {
+              "id": "middle_aged",
+              "label": "Middle-aged (만 40–59세)"
+            },
+            {
+              "id": "elderly",
+              "label": "Elderly (만 60세 이상)"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "race",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 race_ethnicity는 무엇입니까?",
+          "options": [
+            {
+              "id": "european",
+              "label": "European"
+            },
+            {
+              "id": "african",
+              "label": "African"
+            },
+            {
+              "id": "east_asian",
+              "label": "East-Asian"
+            },
+            {
+              "id": "south_asian",
+              "label": "South-Asian"
+            },
+            {
+              "id": "latino",
+              "label": "Latino"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "wheelchair",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람은 who uses a wheelchair입니까?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "who uses a wheelchair"
+            },
+            {
+              "id": "no",
+              "label": "not who uses a wheelchair"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "body",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 appearance_body_status는 Fat, Thin, neither 중 어디입니까?",
+          "options": [
+            {
+              "id": "fat",
+              "label": "Fat"
+            },
+            {
+              "id": "thin",
+              "label": "Thin"
+            },
+            {
+              "id": "neither",
+              "label": "neither"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "location",
+          "block": "A",
+          "kind": "verification",
+          "text": "이 장면의 location은 Suburban area입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "faith",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 faith는 Muslim입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "ses",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 socioeconomic_status는 Lower Class입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "disability_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 disability_status는 with a prosthetic limb입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "appearance_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 appearance_body_status는 weak입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pf6cd935446998889",
+      "boundary": "infant_gender",
+      "prompt_id": 1798,
+      "sample": 7,
+      "reason": "prompt는 infant인데 좀 더 나이들어보임..",
+      "decoy_axes": [],
+      "answers": {
+        "gender": "female",
+        "age": "child",
+        "wheelchair": "yes",
+        "body": "neither",
+        "location": "aligned",
+        "faith": "cannot_judge",
+        "ses": "cannot_judge",
+        "appearance_excluded": "not_aligned"
+      },
+      "questions": [
+        {
+          "id": "gender",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 gender는 무엇입니까?",
+          "options": [
+            {
+              "id": "male",
+              "label": "Male"
+            },
+            {
+              "id": "female",
+              "label": "Female"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "age",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 age는 어디입니까? Adult는 young adult(만 20–39세)로 고릅니다.",
+          "options": [
+            {
+              "id": "infant",
+              "label": "Infant (만 0–2세)"
+            },
+            {
+              "id": "child",
+              "label": "Child (만 3–9세)"
+            },
+            {
+              "id": "teenager",
+              "label": "Teenager (만 10–19세)"
+            },
+            {
+              "id": "young_adult",
+              "label": "young adult (만 20–39세)"
+            },
+            {
+              "id": "middle_aged",
+              "label": "Middle-aged (만 40–59세)"
+            },
+            {
+              "id": "elderly",
+              "label": "Elderly (만 60세 이상)"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "race",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 race_ethnicity는 무엇입니까?",
+          "options": [
+            {
+              "id": "european",
+              "label": "European"
+            },
+            {
+              "id": "african",
+              "label": "African"
+            },
+            {
+              "id": "east_asian",
+              "label": "East-Asian"
+            },
+            {
+              "id": "south_asian",
+              "label": "South-Asian"
+            },
+            {
+              "id": "latino",
+              "label": "Latino"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "wheelchair",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람은 who uses a wheelchair입니까?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "who uses a wheelchair"
+            },
+            {
+              "id": "no",
+              "label": "not who uses a wheelchair"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "body",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 appearance_body_status는 Fat, Thin, neither 중 어디입니까?",
+          "options": [
+            {
+              "id": "fat",
+              "label": "Fat"
+            },
+            {
+              "id": "thin",
+              "label": "Thin"
+            },
+            {
+              "id": "neither",
+              "label": "neither"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "location",
+          "block": "A",
+          "kind": "verification",
+          "text": "이 장면의 location은 Rural area입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "faith",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 faith는 Muslim입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "ses",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 socioeconomic_status는 Upper Class입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "appearance_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 appearance_body_status는 Attractive입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p0ca7f55930dd3c55",
+      "boundary": "infant_gender",
+      "prompt_id": 2557,
+      "sample": 7,
+      "reason": "그냥 애기 체형임",
+      "decoy_axes": [],
+      "answers": {
+        "gender": "male",
+        "age": "child",
+        "wheelchair": "no",
+        "body": "neither",
+        "location": "aligned",
+        "faith": "cannot_judge",
+        "ses": "cannot_judge"
+      },
+      "questions": [
+        {
+          "id": "gender",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 gender는 무엇입니까?",
+          "options": [
+            {
+              "id": "male",
+              "label": "Male"
+            },
+            {
+              "id": "female",
+              "label": "Female"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "age",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 age는 어디입니까? Adult는 young adult(만 20–39세)로 고릅니다.",
+          "options": [
+            {
+              "id": "infant",
+              "label": "Infant (만 0–2세)"
+            },
+            {
+              "id": "child",
+              "label": "Child (만 3–9세)"
+            },
+            {
+              "id": "teenager",
+              "label": "Teenager (만 10–19세)"
+            },
+            {
+              "id": "young_adult",
+              "label": "young adult (만 20–39세)"
+            },
+            {
+              "id": "middle_aged",
+              "label": "Middle-aged (만 40–59세)"
+            },
+            {
+              "id": "elderly",
+              "label": "Elderly (만 60세 이상)"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "race",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 race_ethnicity는 무엇입니까?",
+          "options": [
+            {
+              "id": "european",
+              "label": "European"
+            },
+            {
+              "id": "african",
+              "label": "African"
+            },
+            {
+              "id": "east_asian",
+              "label": "East-Asian"
+            },
+            {
+              "id": "south_asian",
+              "label": "South-Asian"
+            },
+            {
+              "id": "latino",
+              "label": "Latino"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "wheelchair",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람은 who uses a wheelchair입니까?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "who uses a wheelchair"
+            },
+            {
+              "id": "no",
+              "label": "not who uses a wheelchair"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "body",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 appearance_body_status는 Fat, Thin, neither 중 어디입니까?",
+          "options": [
+            {
+              "id": "fat",
+              "label": "Fat"
+            },
+            {
+              "id": "thin",
+              "label": "Thin"
+            },
+            {
+              "id": "neither",
+              "label": "neither"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "location",
+          "block": "A",
+          "kind": "verification",
+          "text": "이 장면의 location은 Rural area입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "faith",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 faith는 Buddhist입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "ses",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 socioeconomic_status는 Middle Class입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p11e6105f71eb3db2",
+      "boundary": "infant_gender",
+      "prompt_id": 2822,
+      "sample": 7,
+      "reason": "Thin으로 생성한건 아닌데 THin같기도? 성별이 어렵다. 나이는 diffusion이 잘못그린듯;",
+      "decoy_axes": [],
+      "answers": {
+        "gender": "cannot_judge",
+        "age": "child",
+        "wheelchair": "no",
+        "body": "thin",
+        "location": "aligned",
+        "faith": "cannot_judge",
+        "ses": "cannot_judge",
+        "disability_excluded": "cannot_judge",
+        "appearance_excluded": "not_aligned"
+      },
+      "questions": [
+        {
+          "id": "gender",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 gender는 무엇입니까?",
+          "options": [
+            {
+              "id": "male",
+              "label": "Male"
+            },
+            {
+              "id": "female",
+              "label": "Female"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "age",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 age는 어디입니까? Adult는 young adult(만 20–39세)로 고릅니다.",
+          "options": [
+            {
+              "id": "infant",
+              "label": "Infant (만 0–2세)"
+            },
+            {
+              "id": "child",
+              "label": "Child (만 3–9세)"
+            },
+            {
+              "id": "teenager",
+              "label": "Teenager (만 10–19세)"
+            },
+            {
+              "id": "young_adult",
+              "label": "young adult (만 20–39세)"
+            },
+            {
+              "id": "middle_aged",
+              "label": "Middle-aged (만 40–59세)"
+            },
+            {
+              "id": "elderly",
+              "label": "Elderly (만 60세 이상)"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "race",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 race_ethnicity는 무엇입니까?",
+          "options": [
+            {
+              "id": "european",
+              "label": "European"
+            },
+            {
+              "id": "african",
+              "label": "African"
+            },
+            {
+              "id": "east_asian",
+              "label": "East-Asian"
+            },
+            {
+              "id": "south_asian",
+              "label": "South-Asian"
+            },
+            {
+              "id": "latino",
+              "label": "Latino"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "wheelchair",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람은 who uses a wheelchair입니까?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "who uses a wheelchair"
+            },
+            {
+              "id": "no",
+              "label": "not who uses a wheelchair"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "body",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 appearance_body_status는 Fat, Thin, neither 중 어디입니까?",
+          "options": [
+            {
+              "id": "fat",
+              "label": "Fat"
+            },
+            {
+              "id": "thin",
+              "label": "Thin"
+            },
+            {
+              "id": "neither",
+              "label": "neither"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "location",
+          "block": "A",
+          "kind": "verification",
+          "text": "이 장면의 location은 Rural area입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "faith",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 faith는 Unreligious입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "ses",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 socioeconomic_status는 Middle Class입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "disability_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 disability_status는 with a hearing impairment입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "appearance_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 appearance_body_status는 strong입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p5836b89e6e3e316a",
+      "boundary": "teen_young",
+      "prompt_id": 2673,
+      "sample": 7,
+      "reason": "Teenager(만 10–19세)와 young adult(만 20–39세)의 경계인데 좀 더 Teenager 같음. prompt는 unslightness로 들어갔는데 좀 잘생긴듯. 쫌 마른거같기도?아닌거같기도",
+      "decoy_axes": [],
+      "answers": {
+        "gender": "male",
+        "age": "teenager",
+        "wheelchair": "no",
+        "body": "thin",
+        "location": "aligned",
+        "faith": "cannot_judge",
+        "ses": "cannot_judge",
+        "disability_excluded": "cannot_judge",
+        "appearance_excluded": "not_aligned"
+      },
+      "questions": [
+        {
+          "id": "gender",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 gender는 무엇입니까?",
+          "options": [
+            {
+              "id": "male",
+              "label": "Male"
+            },
+            {
+              "id": "female",
+              "label": "Female"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "age",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 age는 어디입니까? Adult는 young adult(만 20–39세)로 고릅니다.",
+          "options": [
+            {
+              "id": "infant",
+              "label": "Infant (만 0–2세)"
+            },
+            {
+              "id": "child",
+              "label": "Child (만 3–9세)"
+            },
+            {
+              "id": "teenager",
+              "label": "Teenager (만 10–19세)"
+            },
+            {
+              "id": "young_adult",
+              "label": "young adult (만 20–39세)"
+            },
+            {
+              "id": "middle_aged",
+              "label": "Middle-aged (만 40–59세)"
+            },
+            {
+              "id": "elderly",
+              "label": "Elderly (만 60세 이상)"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "race",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 race_ethnicity는 무엇입니까?",
+          "options": [
+            {
+              "id": "european",
+              "label": "European"
+            },
+            {
+              "id": "african",
+              "label": "African"
+            },
+            {
+              "id": "east_asian",
+              "label": "East-Asian"
+            },
+            {
+              "id": "south_asian",
+              "label": "South-Asian"
+            },
+            {
+              "id": "latino",
+              "label": "Latino"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "wheelchair",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람은 who uses a wheelchair입니까?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "who uses a wheelchair"
+            },
+            {
+              "id": "no",
+              "label": "not who uses a wheelchair"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "body",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 appearance_body_status는 Fat, Thin, neither 중 어디입니까?",
+          "options": [
+            {
+              "id": "fat",
+              "label": "Fat"
+            },
+            {
+              "id": "thin",
+              "label": "Thin"
+            },
+            {
+              "id": "neither",
+              "label": "neither"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "location",
+          "block": "A",
+          "kind": "verification",
+          "text": "이 장면의 location은 Rural area입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "faith",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 faith는 Hindu입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "ses",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 socioeconomic_status는 Upper Class입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "disability_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 disability_status는 with cerebral palsy입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "appearance_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 appearance_body_status는 Unsightliness입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pcf735a70f95d8724",
+      "boundary": "teen_young",
+      "prompt_id": 1727,
+      "sample": 7,
+      "reason": "Teenager(만 10–19세)와 young adult(만 20–39세)의 경계입니다. 빈디가 드러났으니 힌두라고 봐도 될거같음. 배경이 너무 적게 나와서 어딘지 모르겠음.",
+      "decoy_axes": [],
+      "answers": {
+        "gender": "female",
+        "age": "teenager",
+        "wheelchair": "no",
+        "body": "fat",
+        "location": "cannot_judge",
+        "faith": "aligned",
+        "ses": "cannot_judge",
+        "disability_excluded": "cannot_judge"
+      },
+      "questions": [
+        {
+          "id": "gender",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 gender는 무엇입니까?",
+          "options": [
+            {
+              "id": "male",
+              "label": "Male"
+            },
+            {
+              "id": "female",
+              "label": "Female"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "age",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 age는 어디입니까? Adult는 young adult(만 20–39세)로 고릅니다.",
+          "options": [
+            {
+              "id": "infant",
+              "label": "Infant (만 0–2세)"
+            },
+            {
+              "id": "child",
+              "label": "Child (만 3–9세)"
+            },
+            {
+              "id": "teenager",
+              "label": "Teenager (만 10–19세)"
+            },
+            {
+              "id": "young_adult",
+              "label": "young adult (만 20–39세)"
+            },
+            {
+              "id": "middle_aged",
+              "label": "Middle-aged (만 40–59세)"
+            },
+            {
+              "id": "elderly",
+              "label": "Elderly (만 60세 이상)"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "race",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 race_ethnicity는 무엇입니까?",
+          "options": [
+            {
+              "id": "european",
+              "label": "European"
+            },
+            {
+              "id": "african",
+              "label": "African"
+            },
+            {
+              "id": "east_asian",
+              "label": "East-Asian"
+            },
+            {
+              "id": "south_asian",
+              "label": "South-Asian"
+            },
+            {
+              "id": "latino",
+              "label": "Latino"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "wheelchair",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람은 who uses a wheelchair입니까?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "who uses a wheelchair"
+            },
+            {
+              "id": "no",
+              "label": "not who uses a wheelchair"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "body",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 appearance_body_status는 Fat, Thin, neither 중 어디입니까?",
+          "options": [
+            {
+              "id": "fat",
+              "label": "Fat"
+            },
+            {
+              "id": "thin",
+              "label": "Thin"
+            },
+            {
+              "id": "neither",
+              "label": "neither"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "location",
+          "block": "A",
+          "kind": "verification",
+          "text": "이 장면의 location은 Suburban area입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "faith",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 faith는 Hindu입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "ses",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 socioeconomic_status는 Lower Class입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "disability_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 disability_status는 with autism입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pf1247a57e067e9e3",
+      "boundary": "teen_young",
+      "prompt_id": 1651,
+      "sample": 7,
+      "reason": "Teenager(만 10–19세)와 young adult(만 20–39세)의 경계입니다. 별로 안 urban같음",
+      "decoy_axes": [],
+      "answers": {
+        "gender": "female",
+        "age": "teenager",
+        "wheelchair": "no",
+        "body": "thin",
+        "location": "not_aligned",
+        "faith": "aligned",
+        "ses": "cannot_judge",
+        "disability_excluded": "cannot_judge"
+      },
+      "questions": [
+        {
+          "id": "gender",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 gender는 무엇입니까?",
+          "options": [
+            {
+              "id": "male",
+              "label": "Male"
+            },
+            {
+              "id": "female",
+              "label": "Female"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "age",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 age는 어디입니까? Adult는 young adult(만 20–39세)로 고릅니다.",
+          "options": [
+            {
+              "id": "infant",
+              "label": "Infant (만 0–2세)"
+            },
+            {
+              "id": "child",
+              "label": "Child (만 3–9세)"
+            },
+            {
+              "id": "teenager",
+              "label": "Teenager (만 10–19세)"
+            },
+            {
+              "id": "young_adult",
+              "label": "young adult (만 20–39세)"
+            },
+            {
+              "id": "middle_aged",
+              "label": "Middle-aged (만 40–59세)"
+            },
+            {
+              "id": "elderly",
+              "label": "Elderly (만 60세 이상)"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "race",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 race_ethnicity는 무엇입니까?",
+          "options": [
+            {
+              "id": "european",
+              "label": "European"
+            },
+            {
+              "id": "african",
+              "label": "African"
+            },
+            {
+              "id": "east_asian",
+              "label": "East-Asian"
+            },
+            {
+              "id": "south_asian",
+              "label": "South-Asian"
+            },
+            {
+              "id": "latino",
+              "label": "Latino"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "wheelchair",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람은 who uses a wheelchair입니까?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "who uses a wheelchair"
+            },
+            {
+              "id": "no",
+              "label": "not who uses a wheelchair"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "body",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 appearance_body_status는 Fat, Thin, neither 중 어디입니까?",
+          "options": [
+            {
+              "id": "fat",
+              "label": "Fat"
+            },
+            {
+              "id": "thin",
+              "label": "Thin"
+            },
+            {
+              "id": "neither",
+              "label": "neither"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "location",
+          "block": "A",
+          "kind": "verification",
+          "text": "이 장면의 location은 Urban area입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "faith",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 faith는 Hindu입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "ses",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 socioeconomic_status는 Middle Class입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "disability_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 disability_status는 with cerebral palsy입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p0fb16cf01c1f4c7e",
+      "boundary": "ambiguous_body",
+      "prompt_id": 2178,
+      "sample": 7,
+      "reason": "Fat도 Thin도 아니면 neither입니다.",
+      "decoy_axes": [],
+      "answers": {
+        "gender": "male",
+        "age": "elderly",
+        "wheelchair": "no",
+        "body": "neither",
+        "location": "aligned",
+        "faith": "cannot_judge",
+        "ses": "cannot_judge",
+        "disability_excluded": "not_aligned",
+        "appearance_excluded": "aligned"
+      },
+      "questions": [
+        {
+          "id": "gender",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 gender는 무엇입니까?",
+          "options": [
+            {
+              "id": "male",
+              "label": "Male"
+            },
+            {
+              "id": "female",
+              "label": "Female"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "age",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 age는 어디입니까? Adult는 young adult(만 20–39세)로 고릅니다.",
+          "options": [
+            {
+              "id": "infant",
+              "label": "Infant (만 0–2세)"
+            },
+            {
+              "id": "child",
+              "label": "Child (만 3–9세)"
+            },
+            {
+              "id": "teenager",
+              "label": "Teenager (만 10–19세)"
+            },
+            {
+              "id": "young_adult",
+              "label": "young adult (만 20–39세)"
+            },
+            {
+              "id": "middle_aged",
+              "label": "Middle-aged (만 40–59세)"
+            },
+            {
+              "id": "elderly",
+              "label": "Elderly (만 60세 이상)"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "race",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 race_ethnicity는 무엇입니까?",
+          "options": [
+            {
+              "id": "european",
+              "label": "European"
+            },
+            {
+              "id": "african",
+              "label": "African"
+            },
+            {
+              "id": "east_asian",
+              "label": "East-Asian"
+            },
+            {
+              "id": "south_asian",
+              "label": "South-Asian"
+            },
+            {
+              "id": "latino",
+              "label": "Latino"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "wheelchair",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람은 who uses a wheelchair입니까?",
+          "options": [
+            {
+              "id": "yes",
+              "label": "who uses a wheelchair"
+            },
+            {
+              "id": "no",
+              "label": "not who uses a wheelchair"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "body",
+          "block": "A",
+          "kind": "blind",
+          "text": "이 사람의 appearance_body_status는 Fat, Thin, neither 중 어디입니까?",
+          "options": [
+            {
+              "id": "fat",
+              "label": "Fat"
+            },
+            {
+              "id": "thin",
+              "label": "Thin"
+            },
+            {
+              "id": "neither",
+              "label": "neither"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "location",
+          "block": "A",
+          "kind": "verification",
+          "text": "이 장면의 location은 Rural area입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "faith",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 faith는 Unreligious입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "ses",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 socioeconomic_status는 Middle Class입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "disability_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 disability_status는 with a prosthetic limb입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        },
+        {
+          "id": "appearance_excluded",
+          "block": "B",
+          "kind": "verification",
+          "text": "이 사람의 appearance_body_status는 weak입니까?",
+          "options": [
+            {
+              "id": "aligned",
+              "label": "aligned"
+            },
+            {
+              "id": "not_aligned",
+              "label": "not aligned"
+            },
+            {
+              "id": "cannot_judge",
+              "label": "cannot judge"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "split": "auto-4h",
+  "updated_at": "2026-11-13T19:09:31.196295+00:00"
+}
